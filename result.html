@@ -100,7 +100,7 @@
     </button>
 </div>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // localStorage에서 점수를 가져와서 JSON 파싱
     const scores = JSON.parse(localStorage.getItem('scores'));
 
@@ -115,82 +115,90 @@
     document.getElementById('scoreDigitalCommunication').innerText = `${scores.digitalCommunication}점`;
     document.getElementById('scoreDigitalCitizenship').innerText = `${scores.digitalCitizenship}점`;
     document.getElementById('scoreDigitalProblemSolving').innerText = `${scores.digitalProblemSolving}점`;
-            
-            // Chart.js를 사용하여 막대그래프 생성
-            const ctx = document.getElementById('resultChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: [
-                        '디지털 기기 인식 및 활용',
-                        '디지털 기반 교수학습',
-                        '디지털 기반 유아 이해 및 지원',
-                        '디지털 의사소통 및 협력',
-                        '디지털 시민의식',
-                        '디지털 문제해결'
-                    ],
-                    datasets: [{
-                        data: [
-                            scores.digitalDevice,
-                            scores.digitalTeaching,
-                            scores.digitalSupport,
-                            scores.digitalCommunication,
-                            scores.digitalCitizenship,
-                            scores.digitalProblemSolving
-                        ],
-                        backgroundColor: [
-                            'rgba(54, 162, 235, 0.6)',
-                            'rgba(255, 99, 132, 0.6)',
-                            'rgba(75, 192, 192, 0.6)',
-                            'rgba(255, 206, 86, 0.6)',
-                            'rgba(153, 102, 255, 0.6)',
-                            'rgba(255, 159, 64, 0.6)'
-                        ],
-                        borderColor: [
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
+
+    // Chart.js를 사용하여 막대그래프 생성
+    const ctx = document.getElementById('resultChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [
+                '디지털 기기 인식 및 활용',
+                '디지털 기반 교수학습',
+                '디지털 기반 유아 이해 및 지원',
+                '디지털 의사소통 및 협력',
+                '디지털 시민의식',
+                '디지털 문제해결'
+            ],
+            datasets: [{
+                data: [
+                    scores.digitalDevice,
+                    scores.digitalTeaching,
+                    scores.digitalSupport,
+                    scores.digitalCommunication,
+                    scores.digitalCitizenship,
+                    scores.digitalProblemSolving
+                ],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            plugins: {
+                legend: {
+                    display: false
                 },
-                options: {
-                    indexAxis: 'y', // 세로축에 카테고리(이름)를 표시하고 가로 막대 그래프로 변경
-                    plugins: {
-                        legend: {
-                            display: false // 범례(legend) 삭제
-                        },
-                        datalabels: {
-                            anchor: 'end',
-                            align: 'right',
-                            formatter: (value) => `${value}점`, // 막대 위에 점수 표시
-                            color: 'black'
+                datalabels: {
+                    anchor: 'end',
+                    align: 'right',
+                    formatter: (value) => `${value}점`,
+                    color: 'black',
+                    font: {
+                        size: 14
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        display: false
+                    },
+                    grid: {
+                        display: false
+                    },
+                    min: 0,
+                    max: 5
+                },
+                y: {
+                    ticks: {
+                        font: {
+                            size: 14
                         }
                     },
-                    scales: {
-                        x: {
-                            ticks: {
-                                display: false // x축의 척도 숫자 숨기기
-                            },
-                            grid: {
-                                display: false // x축의 그리드 라인 숨기기
-                            },
-                            min: 0,
-                            max: 5 // 점수의 최대값 설정 (5점 기준)
-                        },
-                        y: {
-                            grid: {
-                                display: false // y축의 그리드 라인 숨기기
-                            }
-                        }
+                    grid: {
+                        display: false
                     }
-                },
-                plugins: [ChartDataLabels]
-            });
-        });
+                }
+            }
+        },
+        plugins: [ChartDataLabels]
+    });
+});
     </script>
 </body>
 </html>
