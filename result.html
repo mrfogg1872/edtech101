@@ -100,22 +100,21 @@
     </button>
 </div>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // localStorage에서 점수를 가져와서 JSON 파싱
-            const scores = JSON.parse(localStorage.getItem('scores'));
+    document.addEventListener('DOMContentLoaded', () => {
+    // localStorage에서 점수를 가져와서 JSON 파싱
+    const scores = JSON.parse(localStorage.getItem('scores'));
 
-            // 총점 계산
-            const totalScore = scores.digitalDevice + scores.digitalTeaching + scores.digitalSupport + scores.digitalCommunication + scores.digitalCitizenship + scores.digitalProblemSolving;
-            document.getElementById('scoreSummary').innerText = `당신의 디지털 역량 점수는 총 30점 만점 중 ${totalScore}점입니다.`;
+    // 총점 계산
+    const totalScore = scores.digitalDevice + scores.digitalTeaching + scores.digitalSupport + scores.digitalCommunication + scores.digitalCitizenship + scores.digitalProblemSolving;
+    document.getElementById('scoreSummary').innerText = `당신의 디지털 역량 점수는 총 30점 만점 중 ${totalScore}점입니다.`;
 
-  // 각 점수를 테이블에 출력
+    // 각 점수를 테이블에 출력
     document.getElementById('scoreDigitalDevice').innerText = `${scores.digitalDevice}점`;
     document.getElementById('scoreDigitalTeaching').innerText = `${scores.digitalTeaching}점`;
     document.getElementById('scoreDigitalSupport').innerText = `${scores.digitalSupport}점`;
     document.getElementById('scoreDigitalCommunication').innerText = `${scores.digitalCommunication}점`;
     document.getElementById('scoreDigitalCitizenship').innerText = `${scores.digitalCitizenship}점`;
     document.getElementById('scoreDigitalProblemSolving').innerText = `${scores.digitalProblemSolving}점`;
-
             
             // Chart.js를 사용하여 막대그래프 생성
             const ctx = document.getElementById('resultChart').getContext('2d');
