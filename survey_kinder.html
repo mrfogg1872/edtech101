@@ -375,6 +375,21 @@
         <button type="button" class="submit-btn" onclick="submitForm()">제출</button>
     </form>
     <!-- JavaScript 파일 불러오기, defer 속성 추가 -->
-    <script src="script.js" defer></script>  
+    <script src="script.js" defer>
+        function submitForm() {
+            const form = document.getElementById('diagnosis-form');
+            const formData = new FormData(form);
+
+            for (let i = 1; i <= 30; i++) {
+                const questionName = `question${i}`;
+                if (!formData.has(questionName)) {
+                    alert(`문항 ${i}에 응답하지 않았습니다. 모든 문항에 응답해 주세요.`);
+                    return;
+                }
+            }
+
+            // 점수 계산 로직과 페이지 이동...
+        }        
+    </script>  
 </body>
 </html>
