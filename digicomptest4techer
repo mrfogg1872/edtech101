@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유치원 교사의 디지털 역량 자가진단</title>
+</head>
+<body>
+    <h1>유치원 교사의 디지털 역량 자가진단</h1>
+    <form id="diagnosis-form">
+        <div>
+            <label for="question1">1. 나는 평소에 유아의 놀이, 일상생활, 활동을 지원하기 위한 디지털 기기에 관심이 있다.</label>
+            <input type="radio" name="question1" value="1"> 그렇다
+            <input type="radio" name="question1" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question2">2. 나는 디지털 프로그램을 이용하여 유아의 놀이, 일상생활, 활동을 지원하는 자료를 제작하는 것이 즐겁다.</label>
+            <input type="radio" name="question2" value="1"> 그렇다
+            <input type="radio" name="question2" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question3">3. 나는 유아 디지털 역량의 중요성을 인식하고 있다.</label>
+            <input type="radio" name="question3" value="1"> 그렇다
+            <input type="radio" name="question3" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question4">4. 나는 실시간 온라인 소통 플랫폼을 이용하여 비대면 쌍방향 소통을 할 수 있다.</label>
+            <input type="radio" name="question4" value="1"> 그렇다
+            <input type="radio" name="question4" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question5">5. 나는 유치원에서 교육용 콘텐츠를 활용하거나 사용할 때 필요한 저작물과 관련된 조항들을 알고 있다.</label>
+            <input type="radio" name="question5" value="1"> 그렇다
+            <input type="radio" name="question5" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question6">6. 나는 4차 산업혁명 또는 새로운 디지털 시대에 필요한 지식 및 기술 등에 대해 심화 학습하고자 노력한다.</label>
+            <input type="radio" name="question6" value="1"> 그렇다
+            <input type="radio" name="question6" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question7">7. 나는 유아의 놀이, 일상생활, 활동을 지원하는 데 필요한 디지털 프로그램의 사용방법을 알고 활용할 수 있다.</label>
+            <input type="radio" name="question7" value="1"> 그렇다
+            <input type="radio" name="question7" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question8">8. 나는 유아의 놀이, 일상생활, 활동을 지원하기 위해 필요한 콘텐츠를 인터넷을 통해서 검색하고 수집한다.</label>
+            <input type="radio" name="question8" value="1"> 그렇다
+            <input type="radio" name="question8" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question9">9. 나는 학급에서 유아의 디지털 역량을 증진하기 위한 디지털 환경을 조성하고 있다.</label>
+            <input type="radio" name="question9" value="1"> 그렇다
+            <input type="radio" name="question9" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question10">10. 나는 클라우드 시스템에 자료(문서, 사진, 동영상 등)를 탑재하거나 삭제, 공유할 수 있다.</label>
+            <input type="radio" name="question10" value="1"> 그렇다
+            <input type="radio" name="question10" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question11">11. 나는 유치원에서 폰트, 음원, 이미지 등의 교육용 콘텐츠를 저작권을 위배하지 않는 범위에서 사용할 수 있다.</label>
+            <input type="radio" name="question11" value="1"> 그렇다
+            <input type="radio" name="question11" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question12">12. 나는 일상생활 또는 유치원에서 발생하는 디지털 기기 문제(예: 스마트폰/PC의 저장 용량 부족 현상)를 스스로 또는 인터넷을 통해 해결한다.</label>
+            <input type="radio" name="question12" value="1"> 그렇다
+            <input type="radio" name="question12" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question13">13. 나는 디지털 기기를 활용하여 글, 사진, 동영상, 음성파일 등의 다양한 형태로 유아의 놀이를 기록하고 이를 다른 디지털 기기에 연동하여 활용할 수 있다.</label>
+            <input type="radio" name="question13" value="1"> 그렇다
+            <input type="radio" name="question13" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question14">14. 나는 유아의 놀이, 일상생활, 활동 지원과 관련된 타인의 콘텐츠를 활용하여 새로운 콘텐츠를 만들 수 있다.</label>
+            <input type="radio" name="question14" value="1"> 그렇다
+            <input type="radio" name="question14" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question15">15. 나는 유아의 디지털 활용 능력을 지원하기 위해 유아들에게 적합한 디지털 매체를 선택할 수 있다.</label>
+            <input type="radio" name="question15" value="1"> 그렇다
+            <input type="radio" name="question15" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question16">16. 나는 필요에 따라 QR 코드를 생성하여 다양한 방면에 활용할 수 있다.</label>
+            <input type="radio" name="question16" value="1"> 그렇다
+            <input type="radio" name="question16" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question17">17. 나는 누군가의 자료를 사용할 때 출처를 정확하게 밝히려고 노력한다.</label>
+            <input type="radio" name="question17" value="1"> 그렇다
+            <input type="radio" name="question17" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question18">18. 나는 공동체 구성원들의 다양한 의견을 파악하기 위하여 디지털 플랫폼(예: 구글 설문, 네이버 설문 등)을 이용하여 자료를 수집 및 분석할 수 있다.</label>
+            <input type="radio" name="question18" value="1"> 그렇다
+            <input type="radio" name="question18" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question19">19. 나는 실시간 쌍방향 원격수업에 필요한 디지털 기기와 프로그램에 대해 알고 사용할 수 있다.</label>
+            <input type="radio" name="question19" value="1"> 그렇다
+            <input type="radio" name="question19" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question20">20. 나는 유아의 놀이, 일상생활, 활동 지원과 관련된 새로운 콘텐츠를 기획하고, 내가 원하는 형태(사진, 영상 등)로 제작할 수 있다.</label>
+            <input type="radio" name="question20" value="1"> 그렇다
+            <input type="radio" name="question20" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question21">21. 나는 유아의 흥미와 발달에 적합한 가상/증강현실의 콘텐츠를 추천할 수 있다.</label>
+            <input type="radio" name="question21" value="1"> 그렇다
+            <input type="radio" name="question21" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question22">22. 나는 메타버스(게더타운, 제페토, 이프랜드 등)에 대한 이해도는 높지 않지만, 알아보려고 한다.</label>
+            <input type="radio" name="question22" value="1"> 그렇다
+            <input type="radio" name="question22" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question23">23. 나는 내가 속한 온라인 커뮤니티의 규칙과 절차를 잘 따르며, 온라인에서의 예절을 지키려고 노력한다.</label>
+            <input type="radio" name="question23" value="1"> 그렇다
+            <input type="radio" name="question23" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question24">24. 나는 프로그래밍 언어나 프로그래밍 알고리즘에 대한 분야에 관심이 있다.</label>
+            <input type="radio" name="question24" value="1"> 그렇다
+            <input type="radio" name="question24" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question25">25. 나는 가상/증강현실 기반 콘텐츠를 경험한 적이 있다.</label>
+            <input type="radio" name="question25" value="1"> 그렇다
+            <input type="radio" name="question25" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question26">26. 나는 디지털 프로그램의 기능을 활용하여 놀이기록을 효과적으로 처리(편집, 검색, 복제, 정렬 등)할 수 있다.</label>
+            <input type="radio" name="question26" value="1"> 그렇다
+            <input type="radio" name="question26" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question27">27. 나는 유아들과 디지털을 활용하여 생활하는 것이 즐겁고 그 과정이 의미있다고 생각한다.</label>
+            <input type="radio" name="question27" value="1"> 그렇다
+            <input type="radio" name="question27" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question28">28. 나는 SNS 상에 게시글 및 영상을 공유할 때 공개범위를 설정할 수 있다.</label>
+            <input type="radio" name="question28" value="1"> 그렇다
+            <input type="radio" name="question28" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question29">29. 나는 유아와 학부모에게 온라인에서의 개인정보보호 및 네티켓에 대하여 교육한다.</label>
+            <input type="radio" name="question29" value="1"> 그렇다
+            <input type="radio" name="question29" value="0"> 아니다
+        </div>
+        <div>
+            <label for="question30">30. 나는 검색 시, 고급 검색 기능(파일 형식 및 기간 설정)과 다양한 전문 검색 방법(사전, 인명, 학술 검색 등)을 이용할 수 있다.</label>
+            <input type="radio" name="question30" value="1"> 그렇다
+            <input type="radio" name="question30" value="0"> 아니다
+        </div>
+        <button type="button" onclick="submitForm()">제출</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
