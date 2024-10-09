@@ -1,7 +1,15 @@
 function submitForm() {
     const form = document.getElementById('diagnosis-form');
     const formData = new FormData(form);
-    
+
+    // 모든 문항이 응답되었는지 확인하는 로직
+    for (let i = 1; i <= 30; i++) {
+        if (!formData.has(`question${i}`)) {
+            alert(`문항 ${i}에 응답하지 않았습니다. 모든 문항에 응답해 주세요.`);
+            return; // 함수 종료, 점수 계산 및 페이지 이동 방지
+        }
+    }
+
     let scores = {
         digitalDevice: 0, // 디지털 기기 인식 및 활용
         digitalTeaching: 0, // 디지털 기반 교수학습
