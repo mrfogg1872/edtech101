@@ -11,7 +11,7 @@
             margin: 20px;
             background-color: #f9f9f9;
         }
-        h1 {
+        h1, h2 {
             text-align: center;
             color: #333;
         }
@@ -22,6 +22,34 @@
             background: white;
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .score-summary {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .result-table {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .result-table th, .result-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .result-table th {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+        }
+        .result-table td:nth-child(2) {
+            text-align: left;
         }
         .back-btn {
             display: block;
@@ -43,9 +71,51 @@
 </head>
 <body>
     <h1>자가진단 결과</h1>
+    <div class="score-summary" id="scoreSummary"></div>
     <div class="chart-container">
         <canvas id="resultChart"></canvas>
     </div>
+    <table class="result-table">
+        <thead>
+            <tr>
+                <th>역량</th>
+                <th>설명</th>
+                <th>점수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>디지털 기기 및 자료 활용</td>
+                <td>디지털 기기 및 자료에 관심을 가지고, 각 매체의 유형과 특징을 이해하며, 일상생활 속에서 디지털 기기 및 자료를 적극적으로 활용할 수 있는 능력</td>
+                <td id="scoreDigitalDevice"></td>
+            </tr>
+            <tr>
+                <td>디지털 기반 교수학습</td>
+                <td>디지털 매체의 교육적 활용 가치를 인식하고, 유아의 놀이, 일상생활, 활동을 지원하기 위해 적절한 매체를 선정, 활용, 제작할 수 있는 능력</td>
+                <td id="scoreDigitalTeaching"></td>
+            </tr>
+            <tr>
+                <td>디지털 기반 유아 이해 및 지원</td>
+                <td>디지털을 기반으로 유아의 놀이, 일상생활, 활동을 관찰, 기록, 평가하여 유아에 대한 이해를 도모하고, 교육과정의 질을 높일 수 있는 능력</td>
+                <td id="scoreDigitalSupport"></td>
+            </tr>
+            <tr>
+                <td>디지털 의사소통 및 협력</td>
+                <td>디지털 매체를 활용하여 학부모, 동료 교원 등 교육공동체 구성원들과 적극적으로 소통하고, 상호 이해하며 협력할 수 있는 능력</td>
+                <td id="scoreDigitalCommunication"></td>
+            </tr>
+            <tr>
+                <td>디지털 시민의식</td>
+                <td>디지털 시민으로서 저작권이나 개인정보보호 등 관련 규정과 예절을 준수하고, 비판적으로 사고하여 올바른 정보를 습득하고 생성하며, 디지털 매체를 통해 사회적 문제와 의사결정 과정에 적극적으로 참여하는 능력</td>
+                <td id="scoreDigitalCitizenship"></td>
+            </tr>
+            <tr>
+                <td>디지털 문제해결</td>
+                <td>디지털 매체를 활용하는 과정에서 발생하는 문제를 적극적으로 해결하고, 교육 관련 다양한 문제 및 갈등 상황을 디지털 매체를 활용하여 효과적으로 해결할 수 있는 능력</td>
+                <td id="scoreDigitalProblemSolving"></td>
+            </tr>
+        </tbody>
+    </table>
     <div class="back-btn">
         <a href="index.html">다시 테스트하기</a>
     </div>
@@ -53,6 +123,18 @@
         document.addEventListener('DOMContentLoaded', () => {
             // localStorage에서 점수를 가져와서 JSON 파싱
             const scores = JSON.parse(localStorage.getItem('scores'));
+
+            // 총점 계산
+            const totalScore = scores.digitalDevice + scores.digitalTeaching + scores.digitalSupport + scores.digitalCommunication + scores.digitalCitizenship + scores.digitalProblemSolving;
+            document.getElementById('scoreSummary').innerText = `당신의 디지털 역량 점수는 ${totalScore}점입니다.`;
+
+            // 각 역량 점수를 표에 표시
+            document.getElementById('scoreDigitalDevice').innerText = scores.digitalDevice;
+            document.getElementById('scoreDigitalTeaching').innerText = scores.digitalTeaching;
+            document.getElementById('scoreDigitalSupport').innerText = scores.digitalSupport;
+            document.getElementById('scoreDigitalCommunication').innerText = scores.digitalCommunication;
+            document.getElementById('scoreDigitalCitizenship').innerText = scores.digitalCitizenship;
+            document.getElementById('scoreDigitalProblemSolving').innerText = scores.digitalProblemSolving;
 
             // Chart.js를 사용하여 막대그래프 생성
             const ctx = document.getElementById('resultChart').getContext('2d');
@@ -68,7 +150,6 @@
                         '디지털 문제해결'
                     ],
                     datasets: [{
-                        label: '점수',
                         data: [
                             scores.digitalDevice,
                             scores.digitalTeaching,
@@ -77,16 +158,45 @@
                             scores.digitalCitizenship,
                             scores.digitalProblemSolving
                         ],
-                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(153, 102, 255, 0.6)',
+                            'rgba(255, 159, 64, 0.6)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
                         borderWidth: 1
                     }]
                 },
                 options: {
+                    indexAxis: 'y', // 세로축에 카테고리(이름)를 표시하고 가로 막대 그래프로 변경
+                    plugins: {
+                        legend: {
+                            display: false // 범례(legend) 삭제
+                        }
+                    },
                     scales: {
+                        x: {
+                            ticks: {
+                                display: false // x축의 척도 숫자 숨기기
+                            },
+                            grid: {
+                                display: false // x축의 그리드 라인 숨기기
+                            }
+                        },
                         y: {
-                            beginAtZero: true,
-                            max: 5 // 각 범주의 최대 점수에 맞추어 설정
+                            grid: {
+                                display: false // y축의 그리드 라인 숨기기
+                            }
                         }
                     }
                 }
