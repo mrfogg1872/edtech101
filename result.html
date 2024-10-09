@@ -6,48 +6,37 @@
     <title>자가진단 결과</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
-        }
-        h1, h2 {
-            text-align: center;
-            color: #333;
-        }
-        .chart-container {
-            width: 80%;
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-        .score-summary {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-        }
-        .back-btn {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-        }
-        .back-btn a {
-            text-decoration: none;
-            color: #fff;
-            background-color: #4CAF50;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .back-btn a:hover {
-            background-color: #45a049;
-        }
-    </style>
+  <style>
+    .result-table {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background: white;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
+    .result-table th, .result-table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+        vertical-align: top;
+    }
+    .result-table th {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+    }
+    .result-table td {
+        word-break: keep-all;
+    }
+    .result-table td:nth-child(2) {
+        width: 70%; /* 설명 열의 너비를 넓게 설정 */
+    }
+    .result-table td:nth-child(3) {
+        text-align: center; /* 점수 열의 텍스트 가운데 정렬 */
+        width: 10%;
+    }
+</style>
 </head>
 <body>
     <h1>자가진단 결과</h1>
