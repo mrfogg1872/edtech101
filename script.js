@@ -10,6 +10,7 @@ function submitForm() {
         }
     }
 
+    // 각 범주의 점수를 저장할 객체
     let scores = {
         digitalDevice: 0, // 디지털 기기 인식 및 활용
         digitalTeaching: 0, // 디지털 기반 교수학습
